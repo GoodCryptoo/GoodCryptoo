@@ -1,0 +1,88 @@
+body { 
+    display: flex; 
+    flex-direction: column; /* empile les containers verticalement */
+    justify-content: flex-start; 
+    align-items: center; 
+    min-height: 100vh; /* laisse le scroll si besoin */
+    overflow-y: auto; 
+    font-family: "Bebas Neue", sans-serif;
+    background-color: #f0f0f0; 
+    margin: 0; 
+} 
+
+.flashcards-container {
+    display: flex; 
+    flex-wrap: wrap; /* cartes côte à côte et retour à la ligne si nécessaire */
+    gap: 40px; 
+    justify-content: center; 
+    padding: 20px;
+    margin-bottom: 50px; /* espace entre containers */
+    width: 100%; /* permet à chaque container de s’empiler correctement */
+}
+
+
+.flashcard { 
+    width: 200px; 
+    height: 300px; 
+    perspective: 1000px;
+    position: relative; 
+} 
+
+.bigflashcard { 
+    width: 300px; 
+    height: 300px; 
+    perspective: 1000px;
+    position: relative; 
+} 
+
+.bigflashcard div { 
+    width: 100%; 
+    height: 100%; 
+    position: absolute; 
+    backface-visibility: hidden; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-size: 24px; 
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.6s; 
+    text-align: center; /* Centrer le texte horizontalement */ 
+    padding: 10px; /* Ajouter un peu de padding pour les phrases plus longues */ 
+} 
+
+.flashcard div { 
+    width: 100%; 
+    height: 100%; 
+    position: absolute; 
+    backface-visibility: hidden; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-size: 24px; 
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.6s; 
+    text-align: center; /* Centrer le texte horizontalement */ 
+    padding: 10px; /* Ajouter un peu de padding pour les phrases plus longues */ 
+} 
+
+.front { 
+    background-color: #fff; 
+} 
+
+.back { 
+    background-color: #ffeb3b; 
+    transform: rotateY(180deg); 
+} 
+
+.flashcard.flipped .front { 
+    transform: rotateY(180deg); 
+} 
+
+.flashcard.flipped .back { 
+    transform: rotateY(0deg); 
+}
+
